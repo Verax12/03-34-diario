@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Bastidores de 03:34, jogo de terror em desenvolvimento pela Zeroth Software. Da primeira volta no corredor à criação da escola, das imagens e do som.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="03:34 — Diário de desenvolvimento">
+  <meta property="og:description" content="A construção de um jogo de terror, contada por capturas, comparações e testes.">
+  <meta property="og:url" content="https://verax12.github.io/03-34-diario/">
+  <meta property="og:image" content="https://verax12.github.io/03-34-diario/assets/fachada.webp">
+  <title>03:34 — Diário de desenvolvimento</title>
+  <link rel="canonical" href="https://verax12.github.io/03-34-diario/">
+  <link rel="icon" href="assets/icone.svg" type="image/svg+xml">
+  <link rel="preload" as="font" href="assets/oswald-medium.ttf" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="diario.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header" id="topo">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#topo" aria-label="03:34, início do diário">03<span>:</span>34</a>
+      <nav aria-label="Seções do diário">
+        <a href="#processo">Processo</a>
+        <a href="#imagem">Imagem</a>
+        <a href="#som">Som</a>
+        <a href="#ambientes">Ambientes</a>
+        <a href="#historia">História</a>
+        <a href="#evolucao">Evolução</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo">
+      <img class="hero-image" src="assets/fachada.webp" alt="" width="1600" height="900" fetchpriority="high">
+      <div class="shell hero-inner">
+        <p class="eyebrow">Zeroth Software <span aria-hidden="true">/</span> Jogo em desenvolvimento</p>
+        <h1 id="titulo">03<span>:</span>34</h1>
+        <p class="hero-subtitle">Diário de desenvolvimento</p>
+        <p class="hero-description">Max entra numa escola abandonada, ilumina o caminho com o celular e volta ao início do mesmo corredor. A cada volta, alguma coisa muda. Nos relógios, a hora continua a mesma.</p>
+        <a class="button" href="#processo">Ver como o jogo foi feito <span aria-hidden="true">↓</span></a>
+      </div>
+      <p class="shell hero-caption">Chegada à escola <span aria-hidden="true">·</span> Captura da build de desenvolvimento</p>
+    </section>
+
+    <section class="section shell" id="processo" aria-labelledby="titulo-processo">
+      <header class="section-head">
+        <p class="eyebrow">Processo</p>
+        <h2 id="titulo-processo">Tudo começou num corredor</h2>
+        <p>Em setembro de 2026, a primeira prova precisava responder a uma pergunta simples. Voltar ao mesmo lugar podia dar medo? O protótipo reuniu movimento em primeira pessoa, uma lanterna no celular, salas de aula e relógios presos em 03:34. A escola cresceu a partir desse trecho jogável.</p>
+      </header>
+
+      <div class="comparison" data-comparison>
+        <div class="comparison-stage">
+          <figure>
+            <img src="assets/corredor-primeira-volta.webp" width="1250" height="703" loading="lazy" alt="Corredor escuro, com armários e o relógio vermelho marcando 03:34.">
+            <figcaption>Primeira volta</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/corredor-volta-tardia.webp" width="1250" height="703" loading="lazy" alt="O mesmo corredor mais deteriorado, com piso danificado e detritos no caminho.">
+            <figcaption>Volta tardia</figcaption>
+          </figure>
+          <span class="divider" aria-hidden="true"></span>
+        </div>
+        <div class="comparison-controls" hidden>
+          <label for="comparar-corredor">Arraste para comparar as voltas</label>
+          <input type="range" id="comparar-corredor" min="0" max="100" value="50"
+                 data-left="Primeira volta" data-right="Volta tardia">
+        </div>
+        <p class="media-note">Dois estados da mesma mecânica. A geometria se repete e a deterioração avança.</p>
+      </div>
+
+      <ol class="steps">
+        <li><h3>Provar em pequena escala</h3><p>Isolar movimento, câmera e interação. Só então montar salas, portas e retorno pelo corredor na Unity.</p></li>
+        <li><h3>Construir para repetir</h3><p>Gerar cenas por scripts de Editor e reutilizar prefabs. Adaptar modelos no Blender e registrar origem, licença e alterações de cada asset externo.</p></li>
+        <li><h3>Comparar lado a lado</h3><p>Repetir câmera, percurso ou fonte de som. Guardar a referência antes de ajustar materiais, iluminação, volume ou ordem de eventos.</p></li>
+        <li><h3>Jogar a versão nova</h3><p>Rodar testes de Editor e PlayMode, conferir o trecho no executável macOS e medir o custo visual nos casos em que ele muda.</p></li>
+      </ol>
+    </section>
+
+    <section class="section band" id="imagem" aria-labelledby="titulo-imagem">
+      <div class="shell">
+        <header class="section-head">
+          <p class="eyebrow">Imagem</p>
+          <h2 id="titulo-imagem">Encontrar a luz certa</h2>
+          <p>O estudo de arte de 9 de novembro colocou a imagem da época, o realismo estilizado e uma versão retrô nas mesmas câmeras. A escolha foi pelo realismo estilizado, com a leitura de superfícies e objetos mais clara. A direção depois entrou no jogo inteiro.</p>
+        </header>
+
+        <div class="triptych" aria-label="Três versões do corredor no estudo de arte">
+          <figure>
+            <img src="assets/arte-base.webp" width="1400" height="788" loading="lazy" alt="Corredor na imagem de referência do estudo.">
+            <figcaption>Referência do estudo</figcaption>
+          </figure>
+          <figure class="selected">
+            <img src="assets/arte-realismo.webp" width="1400" height="788" loading="lazy" alt="Mesmo corredor no realismo estilizado, com contornos mais definidos.">
+            <figcaption>Realismo estilizado <span>Adotado</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/arte-retro.webp" width="1400" height="788" loading="lazy" alt="Mesmo corredor com textura pontilhada e gradações reduzidas no teste retrô.">
+            <figcaption>Piloto retrô</figcaption>
+          </figure>
+        </div>
+
+        <article class="feature">
+          <div class="feature-copy">
+            <h3>A chuva passou a receber luz</h3>
+            <p>No pátio, as gotas aparecem no facho da lanterna e perto das luminárias. Para isolar a mudança, a comparação repetiu câmera e partículas e ligou ou desligou as fontes uma por vez.</p>
+            <p>Em 17 vistas fixas no M4 Pro, a média passou de <strong>10,96 para 11,34 ms por quadro</strong> em 4K equilibrado. Foi uma medição no conjunto da escola.</p>
+          </div>
+          <div class="comparison" data-comparison>
+            <div class="comparison-stage">
+              <figure>
+                <img src="assets/patio-chuva-antes.webp" width="1500" height="844" loading="lazy" alt="Pátio à noite com o material de chuva anterior.">
+                <figcaption>Antes</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/patio-chuva-depois.webp" width="1500" height="844" loading="lazy" alt="Mesmo pátio, com gotas mais visíveis ao cruzarem as áreas iluminadas.">
+                <figcaption>Depois</figcaption>
+              </figure>
+              <span class="divider" aria-hidden="true"></span>
+            </div>
+            <div class="comparison-controls" hidden>
+              <label for="comparar-chuva">Arraste para comparar a chuva no pátio</label>
+              <input type="range" id="comparar-chuva" min="0" max="100" value="50" data-left="Antes" data-right="Depois">
+            </div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-copy">
+            <h3>Uma enfermaria para testar a escola</h3>
+            <p>Antes de expandir a iluminação indireta, testamos como as fluorescentes do teto iluminavam a maca e o lavatório. Repetimos as capturas com a luz rebatida ligada e desligada e conferimos a travessia entre sala e corredor. O piloto orientou a expansão para a escola.</p>
+          </div>
+          <div class="comparison" data-comparison>
+            <div class="comparison-stage">
+              <figure>
+                <img src="assets/enfermaria-antes.webp" width="1400" height="788" loading="lazy" alt="Maca da enfermaria vista da porta na iluminação de referência.">
+                <figcaption>Antes</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/enfermaria-depois.webp" width="1400" height="788" loading="lazy" alt="Mesmo enquadramento, com a iluminação revisada na entrada e na área da maca.">
+                <figcaption>Depois</figcaption>
+              </figure>
+              <span class="divider" aria-hidden="true"></span>
+            </div>
+            <div class="comparison-controls" hidden>
+              <label for="comparar-enfermaria">Arraste para comparar a iluminação da enfermaria</label>
+              <input type="range" id="comparar-enfermaria" min="0" max="100" value="50" data-left="Antes" data-right="Depois">
+            </div>
+          </div>
+        </article>
+
+        <details class="field-note">
+          <summary>Como a exposição da chegada mudou</summary>
+          <p>A revisão escureceu a calçada sem perder a entrada iluminada. Em uma captura de controle com câmera e chuva iguais, a média dos canais RGB caiu de 43,45 para 34,86, numa escala de 0 a 255.</p>
+          <div class="two-frames">
+            <figure>
+              <img src="assets/fachada-luz-antes.webp" width="1500" height="844" loading="lazy" alt="Fachada com a exposição anterior e a calçada mais clara.">
+              <figcaption>Exposição anterior</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/fachada.webp" width="1600" height="900" loading="lazy" alt="Mesma fachada com o entorno mais escuro e a entrada ainda iluminada.">
+              <figcaption>Exposição revisada</figcaption>
+            </figure>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section shell" id="som" aria-labelledby="titulo-som">
+      <header class="section-head">
+        <p class="eyebrow">Som</p>
+        <h2 id="titulo-som">Ouvir o que a câmera deixa de fora</h2>
+        <p>O áudio ajuda a localizar o que está fora do quadro. Começamos pelos passos, a respiração e os sons atrás de paredes. Depois, o piso passou a definir o timbre dos passos, e cada ambiente ganhou uma reverberação própria.</p>
+      </header>
+
+      <div class="sound-panel">
+        <div>
+          <h3>A mesma caminhada, duas mixagens</h3>
+          <p>Duas gravações de 22 segundos no Unity, com o mesmo percurso e volume. Aos <strong>15,5 s</strong>, um arrasto vem de uma passagem livre. Aos <strong>19,9 s</strong>, o mesmo som vem de trás de uma parede. Na revisão, a parede corta cerca de <strong>25 dB acima de 3 kHz</strong> nesse teste.</p>
+        </div>
+        <div class="sound-tracks">
+          <div class="track">
+            <p id="audio-antes">Antes <span>0:22</span></p>
+            <audio controls preload="none" aria-labelledby="audio-antes" src="assets/mix-antes.flac">
+              <a href="assets/mix-antes.flac">Baixar a gravação anterior</a>
+            </audio>
+          </div>
+          <div class="track">
+            <p id="audio-depois">Depois <span>0:22</span></p>
+            <audio controls preload="none" aria-labelledby="audio-depois" src="assets/mix-depois.flac">
+              <a href="assets/mix-depois.flac">Baixar a gravação revisada</a>
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <div class="audio-notes">
+        <article>
+          <h3>Textura e distância</h3>
+          <p>Madeira no quarto, piso polido na quadra, cascalho na floresta. O som dos objetos acompanha ações confirmadas, como a gaveta que abre e a página que vira.</p>
+        </article>
+        <article>
+          <h3>Trilha, silêncio e picos</h3>
+          <p>A música entra em camadas e recua durante eventos prioritários. O tema da Lia nasce de quatro notas. Na mixagem integrada, o modo noturno reduz os picos de impacto e de voz.</p>
+          <audio controls preload="none" aria-label="Prévia do tema da Lia, 50 segundos" src="assets/tema-da-lia.flac">
+            <a href="assets/tema-da-lia.flac">Baixar a prévia do tema da Lia</a>
+          </audio>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band" id="ambientes" aria-labelledby="titulo-ambientes">
+      <div class="shell">
+        <header class="section-head">
+          <p class="eyebrow">Ambientes</p>
+          <h2 id="titulo-ambientes">Do mapa à primeira caminhada</h2>
+          <p>A escola cresceu em módulos. Primeiro vieram a entrada e o hall, depois a administração, as salas, as galerias e o pátio. Os anexos ampliaram os percursos e deram espaços próprios aos encontros e aos enigmas.</p>
+        </header>
+
+        <div class="environment-lead">
+          <figure class="plan">
+            <img src="assets/patio-planta.webp" width="1400" height="1400" loading="lazy" alt="Vista de cima do pátio, com a árvore central, os caminhos, o canteiro e as galerias laterais.">
+            <figcaption>Vista superior do pátio durante a montagem</figcaption>
+          </figure>
+          <div>
+            <figure>
+              <img src="assets/patio-percurso.webp" width="1400" height="788" loading="lazy" alt="O pátio visto na altura de Max, com mesas, marquise e o celular iluminando o chão.">
+              <figcaption>Percurso com a câmera do jogador</figcaption>
+            </figure>
+            <p>O pátio mostra o processo completo. A planta definiu a ligação entre as galerias. A árvore, os bancos, a horta e as mesas deram função ao espaço. A caminhada verificou acessos, colisões e o que se vê pelas janelas.</p>
+          </div>
+        </div>
+
+        <div class="places">
+          <figure>
+            <img src="assets/quadra.webp" width="1100" height="619" loading="lazy" alt="Ginásio vazio, visto de lado com a cesta e as marcações esportivas.">
+            <figcaption><strong>Quadra</strong> Piso polido, saguão de troféus e um espaço para mudar a escala sonora da escola.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/auditorio.webp" width="1100" height="619" loading="lazy" alt="Fileiras de poltronas vermelhas de frente para o palco com cortina fechada.">
+            <figcaption><strong>Auditório</strong> Palco, cortina e sombras fazem parte da interação com o cenário.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/quarto.webp" width="1100" height="619" loading="lazy" alt="Escrivaninha junto à janela do quarto da Lia, iluminada pelo abajur.">
+            <figcaption><strong>Quarto da Lia</strong> Luz quente, janela fria e objetos com manuseio próprio. O polimento passou por móveis, roupas, cortina e diário.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/floresta.webp" width="1100" height="619" loading="lazy" alt="Trilha escura entre árvores e chuva, com um carro ao fundo.">
+            <figcaption><strong>Floresta</strong> Faróis rente ao chão ajudam a orientar a trilha e revelam textura no solo molhado.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="historia" aria-labelledby="titulo-historia">
+      <header class="section-head">
+        <p class="eyebrow">História</p>
+        <h2 id="titulo-historia">Contar pela exploração</h2>
+        <p>O loop deu a primeira regra do mundo. Max e Lia deram uma razão para continuar explorando. A história foi ganhando forma pelas mensagens, pelos bilhetes e pelos detalhes que o jogador escolhe examinar.</p>
+      </header>
+
+      <div class="story-layout">
+        <div class="story-copy">
+          <h3>O celular como objeto de cena</h3>
+          <p>O mesmo aparelho serve de lanterna, relógio e acesso às mensagens. A revisão de novembro mudou o papel de parede, ajustou o encaixe do vidro no modelo e reorganizou o histórico para facilitar a releitura. Conferimos o enquadramento na Unity em 4:3, 16:9 e 21:9 e repetiu a chegada no executável.</p>
+          <h3>O que o playtest mudou</h3>
+          <p>O jogador podia chegar à quadra cedo e esgotar um encontro antes da hora. A revisão permitiu abrir a porta nessa ordem e passou a reservar o encontro para o momento certo. A quadra ganhou indicação de onde procurar o enigma e consulta opcional às pistas já vistas.</p>
+          <p>Em novembro, os testes do executável cobriram quadra, câmara fria e auditório. A dificuldade para quem chega pela primeira vez ainda precisa ser observada em playtest.</p>
+        </div>
+        <div class="phone-board">
+          <div class="two-frames">
+            <figure>
+              <img src="assets/celular-antes.webp" width="512" height="1064" loading="lazy" alt="Tela de bloqueio antiga, em tons roxos, marcando 03:34.">
+              <figcaption>Antes</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/celular-depois.webp" width="512" height="1064" loading="lazy" alt="Tela de bloqueio revisada, verde-escura, com linhas concêntricas e a hora 03:34.">
+              <figcaption>Depois</figcaption>
+            </figure>
+          </div>
+          <p class="media-note">Tela de bloqueio do celular antes e depois da revisão de 17 de novembro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="evolucao" aria-labelledby="titulo-evolucao">
+      <div class="shell">
+        <header class="section-head">
+          <p class="eyebrow">Evolução</p>
+          <h2 id="titulo-evolucao">Linha do tempo</h2>
+          <p>Do protótipo em Unity às revisões de imagem, som e campanha registradas em novembro de 2026.</p>
+        </header>
+        <ol class="timeline">
+          <li><time datetime="2026-09">Setembro de 2026</time><div><h3>Primeiro loop jogável</h3><p>Movimento em primeira pessoa, lanterna, relógios travados e o corredor que devolve Max ao começo. Depois entram deterioração e bilhetes.</p><a href="#processo">Ver o corredor nas duas voltas</a></div></li>
+          <li><time datetime="2026-09-27">27 a 30 de setembro</time><div><h3>Entrada e escola explorável</h3><p>A chegada pela fachada se junta ao vestíbulo e ao hall. A montagem da escola avança por módulos e ganha uma consolidação pré-alfa.</p></div></li>
+          <li><time datetime="2026-10">Outubro de 2026</time><div><h3>Mapa e história se encontram</h3><p>Max, Lia e as mensagens entram na campanha. Pátio, quadra e cantina ganham função narrativa. A circulação da escola é encurtada em trechos revisados.</p></div></li>
+          <li><time datetime="2026-10-30">30 de outubro</time><div><h3>O playtest vira pauta de produção</h3><p>A revisão ataca problemas de controles, circulação, áudio e ritmo. Novas rodadas registram percursos e reações no executável.</p></div></li>
+          <li><time datetime="2026-11-05">5 a 14 de novembro</time><div><h3>Auditório, quarto e floresta</h3><p>A produção avança para o palco, o quarto da Lia e a pedreira. O estudo visual é aprovado e o realismo estilizado passa a ser o padrão do jogo.</p><a href="#imagem">Ver o estudo de arte</a></div></li>
+          <li><time datetime="2026-11-16">16 e 17 de novembro</time><div><h3>Polimento de luz, som e pistas</h3><p>A luz indireta se expande pela escola. A chuva reage às fontes, o áudio ganha acústica e música adaptativa, e a releitura das mensagens e os enigmas passam por revisão.</p><a href="#som">Ouvir a revisão de áudio</a></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section shell partnership" id="parcerias" aria-labelledby="titulo-parcerias">
+      <div>
+        <p class="eyebrow">Zeroth Software</p>
+        <h2 id="titulo-parcerias">Parcerias e patrocínio</h2>
+        <p>03:34 é um jogo independente em desenvolvimento, com builds de validação para macOS. Este diário reúne a proposta do jogo, o que já passou pelo executável e os pontos que continuam em avaliação. Para conversar sobre o projeto, acesse o perfil do desenvolvedor.</p>
+        <a class="button secondary" href="https://github.com/Verax12">Perfil do desenvolvedor no GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <details class="field-note" id="creditos">
+        <summary>Créditos das capturas, dos sons e da tipografia</summary>
+        <p>Imagens capturadas na Unity durante o desenvolvimento de 03:34. A página apresenta imagens renderizadas, com mídia reduzida para a web.</p>
+        <p>Gravações A/B mixadas no Unity com passos de <a href="https://opengameart.org/content/footsteps-0">GboxMikeFozzy</a>, arrasto de <a href="https://opengameart.org/content/scrapes">AntumDeluge</a>, respiração de <a href="https://opengameart.org/content/ghost-breath">qubodup</a> e impactos de <a href="https://kenney.nl/assets/impact-sounds">Kenney</a>, fontes CC0 1.0.</p>
+        <p>Tema da Lia composto para 03:34 com amostras de <a href="https://github.com/sfzinstruments/SalamanderGrandPiano">Salamander Grand Piano V3</a>, de Alexander Holm, sob <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. As amostras foram recortadas, transpostas, processadas e arranjadas na prévia.</p>
+        <p>Oswald, de The Oswald Project Authors, sob a <a href="assets/oswald-ofl.txt">SIL Open Font License 1.1</a>.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>03:34 <span aria-hidden="true">·</span> Zeroth Software</p>
+      <p>Diário atualizado em <time datetime="2026-11-18">18 de novembro de 2026</time></p>
+      <a href="#topo">Voltar ao início ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
